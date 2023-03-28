@@ -1,11 +1,11 @@
 /*
-// FACE_NAME "IBM CGA Light 8x8"
-//
-// 0-31,127 : Code page 437, cf. https://en.wikipedia.org/wiki/Code_page_437
-// 32-126   : ASCII
-// 160-255  : ISO-8859-1, cf. https://en.wikipedia.org/wiki/ISO/IEC_8859-1
-//
-*/
+ * FACE_NAME "IBM BIOS 8x8"
+ * Source: https://github.com/rene-d/fontino/blob/master/font8x8_ib8x8u.ino
+ * 
+ * 0-31,127 : Code page 437, cf. https://en.wikipedia.org/wiki/Code_page_437
+ * 32-126   : ASCII
+ * 160-255  : ISO-8859-1, cf. https://en.wikipedia.org/wiki/ISO/IEC_8859-1
+ */
 
 const unsigned int font[224][8] = {
     // ---------------------------  0-127 ---------------------------
