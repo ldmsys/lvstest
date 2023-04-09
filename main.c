@@ -33,7 +33,7 @@ void printGreyImage(int* buf, int bufX, unsigned char* img, int imgX, int imgY, 
     for(int i=0;i<imgX;i++) for(int j=0;j<imgY;j++) {
         tmpi = 0xdb000000;
         for(int k=0;k<3;k++) tmpi |= (unsigned char)img[i*imgX+j]<<(8*k);
-        buf[(sposX+i)*bufX+sposY+j] = tmpi;
+        buf[(sposY+i)*bufX+sposX+j] = tmpi;
     }
 }
 
@@ -73,8 +73,8 @@ int main(int argc,char** argv) {
     rfbScreenInfoPtr server=rfbGetScreen(&argc,argv,1024,768,8,3,4);
     fillColor(buf, 768, 0, 0, 1024, 768, RGB(0, 0, 0));
     upScaleGreyImage(upscaled, img, 256, 256, 3);
-    printGreyImage(buf, 1024, upscaled, 256*3, 256*3, 0, 0);
-    printGreyImage(buf, 1024, img, 256, 256, 256, 384);
+    printGreyImage(buf, 1024, upscaled, 256*3, 256*3, 128, 0);
+    printGreyImage(buf, 1024, img, 256, 256, 384, 256);
     printString(buf, 1024, 10, 10, "Make better with [\"passion\", \"code\", \"hard work\"]", RGB(255, 255, 255));
     printString(buf, 1024, 18, 10, "+1 (888) 318-1430", RGB(0, 255, 0));
     printString(buf, 1024, 26, 10, "https://ldmsys.net", RGB(0, 255, 255));
